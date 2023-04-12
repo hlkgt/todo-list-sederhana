@@ -37,13 +37,26 @@ createButton.addEventListener("click", (e) => {
       todo += `<li class="list-index">
                 <div class="task-list">
                   <p>${item.name}</p>
-                  <button>complete</button>
+                  <button class="complete-button">complete</button>
                   <button data-id="${index}" class="remove-button">remove</button>
                 </div>
               </li>`;
     }
   });
   listArea.innerHTML = todo;
+  let task = document.querySelectorAll(".task-list");
+  let completeButton = document.querySelectorAll(".complete-button");
+  for (let i = 0; i < completeButton.length; i++) {
+    completeButton[i].addEventListener("click", () => {
+      let confirmation = confirm("complete?");
+      console.log(task);
+      if (confirmation) {
+        task[i].classList.add("checked");
+      } else {
+        task[i].classList.remove("checked");
+      }
+    });
+  }
   let removeButton = document.querySelectorAll(".remove-button");
   for (let i = 0; i < removeButton.length; i++) {
     removeButton[i].addEventListener("click", (e) => {

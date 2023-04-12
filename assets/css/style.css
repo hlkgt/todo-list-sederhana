@@ -73,6 +73,10 @@ body {
   border: 2px solid #d8e2dc;
   border-radius: 10px;
 }
+.container .read-area ul li .task-list.checked {
+  background-color: green;
+  color: #ffffff;
+}
 .container .read-area ul li .task-list p {
   width: 70%;
   font-size: 1.5rem;
