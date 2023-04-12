@@ -12,8 +12,12 @@ function Todos(name, checked, isDelete) {
 
 const removeList = (id) => {
   let listIndex = document.querySelectorAll(".list-index");
-  todos.splice(listIndex[id], 1);
-  listIndex[id].remove();
+  if (listIndex.length === 1 && id === "1") {
+    listIndex[id - 1].remove();
+  } else {
+    listIndex[id].remove();
+  }
+  todos.splice(todos[id], 1);
   return todos;
 };
 
