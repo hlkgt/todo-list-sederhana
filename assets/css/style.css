@@ -109,6 +109,9 @@ body {
   .container .create-area {
     width: 90%;
   }
+  .container .create-area .input-colum input {
+    width: 60%;
+  }
   .container .read-area {
     width: 90%;
     height: 28rem;
