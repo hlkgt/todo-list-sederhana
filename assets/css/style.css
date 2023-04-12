@@ -69,6 +69,7 @@ body {
 }
 .container .read-area ul li .task-list {
   display: flex;
+  align-items: center;
   padding: 10px;
   border: 2px solid #d8e2dc;
   border-radius: 10px;
@@ -105,7 +106,15 @@ body {
   .container {
     flex-wrap: wrap;
   }
+  .container .create-area {
+    width: 90%;
+  }
   .container .read-area {
-    margin-top: -7rem;
+    width: 90%;
+    height: 28rem;
+    margin-top: -1.8rem;
+  }
+  .container .read-area ul li .task-list p {
+    font-size: 1rem;
   }
 }
