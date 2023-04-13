@@ -105,17 +105,19 @@ body {
 
 @media screen and (max-width: 786px) {
   .container {
+    height: 120vh;
     flex-wrap: wrap;
   }
   .container .create-area {
     width: 90%;
+    margin-top: 3rem;
   }
   .container .create-area .input-colum input {
     width: 60%;
   }
   .container .read-area {
     width: 90%;
-    margin-top: -1.8rem;
+    margin: 3rem 0 8rem 0;
   }
   .container .read-area ul li .task-list p {
     font-size: 1rem;
