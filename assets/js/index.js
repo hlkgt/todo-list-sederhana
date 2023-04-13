@@ -4,13 +4,20 @@ const listArea = document.querySelector(".list-area");
 const valueInput = document.querySelector('input[name="todos"]');
 
 // Initialize empty array to hold todos
-let todos = [];
+let todos = [
+  { name: "leo1", checked: false, isDelete: false },
+  { name: "leo2", checked: false, isDelete: false },
+  { name: "leo", checked: false, isDelete: false },
+  { name: "leo4", checked: false, isDelete: false },
+];
 
 // Constructor function for creating new todo objects
-function TodoItem(name, checked, isDelete) {
-  this.name = name;
-  this.checked = checked;
-  this.isDelete = isDelete;
+class TodoItem {
+  constructor(name, checked, isDelete) {
+    this.name = name;
+    this.checked = checked;
+    this.isDelete = isDelete;
+  }
 }
 
 // Function to remove a todo item from the list and from the todos array
@@ -26,11 +33,19 @@ const removeListItem = (id) => {
     listItems[id].remove();
   }
 
-  // Remove the todo item from the todos array
-  todos.splice(id, 1);
-
   // Return the updated todos array
   return todos;
+};
+
+// check todos is empty
+const todosIsEmpty = () => {
+  if (todos.length === 0) {
+    listArea.innerHTML =
+      '<h3 style="text-align:center;">--- List Masih Kosong ---</h3>';
+    return true;
+  } else {
+    return false;
+  }
 };
 
 // Event listener for when the create button is clicked
@@ -98,12 +113,23 @@ createButton.addEventListener("click", (e) => {
   const removeButtons = document.querySelectorAll(".remove-button");
 
   // Add event listeners to each remove button
-  removeButtons.forEach((button) => {
+  removeButtons.forEach((button, index) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
       // Get the index of the todo to remove from the "data-id" attribute
       const id = e.target.dataset.id;
+
+      // Remove the todo item from the todos array
+      if (todos.length === 1 && index === 1) {
+        todos.splice(index - 1, 1);
+      } else {
+        todos.splice(index, 1);
+      }
+
       removeListItem(id);
+      todosIsEmpty();
     });
   });
 });
+
+todosIsEmpty();

@@ -53,13 +53,12 @@ body {
 }
 .container .read-area {
   width: 35rem;
-  height: 30rem;
   border-radius: 10px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
 }
 .container .read-area h3 {
   text-align: center;
-  margin: 20px 0 0 0;
+  margin: 20px 0 20px 0;
 }
 .container .read-area ul {
   width: 100%;
@@ -67,7 +66,7 @@ body {
 }
 .container .read-area ul li {
   list-style-type: none;
-  padding: 20px 30px 0 30px;
+  padding: 20px 30px;
 }
 .container .read-area ul li .task-list {
   display: flex;
@@ -116,7 +115,6 @@ body {
   }
   .container .read-area {
     width: 90%;
-    height: 28rem;
     margin-top: -1.8rem;
   }
   .container .read-area ul li .task-list p {
